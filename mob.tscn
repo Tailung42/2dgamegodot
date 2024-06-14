@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://co3yrvat1yivg"]
+[gd_scene load_steps=10 format=3 uid="uid://co3yrvat1yivg"]
 
+[ext_resource type="Script" path="res://mob.gd" id="1_8foma"]
 [ext_resource type="Texture2D" uid="uid://cve5ge2lrucxv" path="res://art/enemyFlyingAlt_1.png" id="1_j6fuw"]
 [ext_resource type="Texture2D" uid="uid://w80x2fa3lq8p" path="res://art/enemyFlyingAlt_2.png" id="2_nr1dj"]
 [ext_resource type="Texture2D" uid="uid://dj3j3fjw0ysdi" path="res://art/enemySwimming_1.png" id="3_nan40"]
@@ -48,11 +49,15 @@ radius = 33.0308
 height = 90.0577
 
 [node name="Mob" type="RigidBody2D"]
+position = Vector2(94, 85)
 collision_mask = 0
 gravity_scale = 0.0
+script = ExtResource("1_8foma")
 metadata/_edit_group_ = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(4.5, 3.3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.7, 0.7)
@@ -61,6 +66,7 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.55269
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_3cxog")
-debug_color = Color(0.794392, 0.354404, 0.61376, 0.42)
+debug_color = Color(0.92549, 0.345098, 0.572549, 0.188235)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
