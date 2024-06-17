@@ -10,16 +10,15 @@ func show_message(text):
 
 func show_game_over():
 	show_message("Game Over")
-	await $messageTimer.Timeout
-
+	await $MessageTimer.timeout
 	$Message.text = "Dodge the Creeps!"
-	if is_inside_tree():
-		await get_tree().create_timer(1).timeout
-		$StartButton.show()
+	$Message.show()
+	await get_tree().create_timer(1).timeout
+	$StartButton.show()
 
 
 func update_score(score):
-	$scoreLabel.text = str(score)
+	$ScoreLabel.text = str(score)
 	
 
 # Called when the node enters the scene tree for the first time.
