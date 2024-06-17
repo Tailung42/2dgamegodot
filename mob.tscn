@@ -45,22 +45,22 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cxog"]
-radius = 33.0308
-height = 90.0577
+radius = 23.9599
+height = 66.134
 
 [node name="Mob" type="RigidBody2D"]
-position = Vector2(94, 85)
+position = Vector2(139, 65)
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_8foma")
 metadata/_edit_group_ = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-3.8147e-06, 0)
-scale = Vector2(4.5, 3.3)
+position = Vector2(0.500003, 0)
+scale = Vector2(3.55, 2.4)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_peev5")
 animation = &"walk"
 
