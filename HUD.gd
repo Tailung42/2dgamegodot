@@ -18,7 +18,7 @@ func show_game_over():
 
 
 func update_score(score):
-	$ScoreLabel.text = str(score)
+	$ScoreLabel.text = "Score: " + str(score)
 	
 
 # Called when the node enters the scene tree for the first time.
