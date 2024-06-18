@@ -7,9 +7,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_0weah"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -2, 2, 0, 0, 0, 0, 479, 0, 0, 0, 0, 0, 482, 721, 0, 0, 0, 0, -3, 720, 0, 0, 0, 0, -2, 2)
+"points": PackedVector2Array(0, 0, 0, 0, -2, 2, 0, 0, 0, 0, -2, 2, 0, 0, 0, 0, 3, -14, 0, 0, 0, 0, 495, -14, 0, 0, 0, 0, 493, -19, 0, 0, 0, 0, 1172, -6, 0, 0, 0, 0, 1172, 640, 0, 0, 0, 0, -5, 640, 0, 0, 0, 0, -2, 2)
 }
-point_count = 5
+point_count = 9
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jw5xd")
@@ -27,16 +27,24 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(603, 274)
 
 [node name="MobPath" type="Path2D" parent="."]
+position = Vector2(-20, 8)
 curve = SubResource("Curve2D_0weah")
 
 [node name="MobspawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2(-2, 2)
-rotation = -0.00415798
+position = Vector2(-2.04883, 2.15625)
 
 [node name="HUD" parent="." instance=ExtResource("4_45s5x")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -16.0
+offset_top = -2.0
+offset_right = 1175.0
+offset_bottom = 665.0
+color = Color(0.458278, 0.665357, 0.157296, 1)
 
 [connection signal="hit" from="Player" to="." method="gave_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
